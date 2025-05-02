@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Backbutton from '../../../components/Backbutton';
 
-const PassForget = () => {
+const PassForget = ({navigation}) => {
   const [code, setCode] = useState(['', '', '', '', '', '']);
   const inputRefs = useRef([]);
 
@@ -21,12 +21,12 @@ const PassForget = () => {
     }
   };
 
-  // Check if all code fields are filled
+  
   const isCodeComplete = code.every(digit => digit !== '');
 
   const handleContinue = () => {
     if (isCodeComplete) {
-      // Handle continue action here
+      navigation.navigate('Newpass')
       console.log('Verification code:', code.join(''));
     }
   };

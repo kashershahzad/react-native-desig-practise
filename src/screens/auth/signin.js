@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image } from 'react-native';
 
 const SignInScreen = ({ navigation }) => {
-  const smilepage = () => {
-    navigation.replace('Smile')
+
+  const createacc = () =>{
+    navigation.replace('Createacc')
   }
 
   const forgetpass = () =>{
-    navigation.navigate('PassForget')
+    navigation.navigate('Restpassmail')
   }
   const [error, seterror] = useState(false)
   const [email, setemail] = useState('')
@@ -17,7 +18,7 @@ const SignInScreen = ({ navigation }) => {
     if (email === '' || Password === '') {
       seterror(true);
     } else {
-      smilepage();
+      navigation.replace('Otp')
     }
   };
 
@@ -72,7 +73,7 @@ const SignInScreen = ({ navigation }) => {
 
       <Text style={styles.continuewith}>Don’t have an account?</Text>
 
-      <TouchableOpacity style={styles.createbtn}>
+      <TouchableOpacity style={styles.createbtn} onPress={createacc}>
         <Text style={styles.createbtntext}>Create Account</Text>
       </TouchableOpacity>
     </View>
