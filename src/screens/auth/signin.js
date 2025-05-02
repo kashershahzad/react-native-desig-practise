@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image } from 'react-native';
 
 const SignInScreen = ({ navigation }) => {
   const smilepage = () => {
     navigation.replace('Smile')
   }
+
+  const forgetpass = () =>{
+    navigation.navigate('PassForget')
+  }
+  const [error, seterror] = useState(false)
+  const [email, setemail] = useState('')
+  const [Password, setPassword] = useState('')
+
+  const handleContinue = () => {
+    if (email === '' || Password === '') {
+      seterror(true);
+    } else {
+      smilepage();
+    }
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backbtn}>
-      <Image source={require('../../../assets/images/arrow-left.png')} />
+        <Image source={require('../../../assets/images/arrow-left.png')} />
       </TouchableOpacity>
       <View style={styles.signinsection}>
         <Text style={styles.signintitle}>
@@ -21,19 +37,23 @@ const SignInScreen = ({ navigation }) => {
         <View>
           <Text style={styles.label}>Your Email address</Text>
           <TextInput placeholder='mail@site.com'
-            style={styles.input}
+            style={[styles.input, error && { borderBottomColor: 'red' }]}
+            value={email}
             keyboardType="email-address" />
+          {error && <Text style={styles.error}>Invalid input entered</Text>}
         </View>
         <View>
           <Text style={styles.label}>Password</Text>
           <TextInput
             style={styles.input}
+            value={Password}
             secureTextEntry />
         </View>
       </View>
-      <Text style={{ marginTop: 25, color: '#272727', fontSize: 14 }}>Forget Password</Text>
-
-      <TouchableOpacity style={styles.continuebtn}>
+      <TouchableOpacity onPress={forgetpass}>
+        <Text style={{ marginTop: 25, color: '#272727', fontSize: 14 }}>Forget Password</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.continuebtn} onPress={handleContinue}>
         <Text style={{ color: 'white', fontSize: 16 }}>Continue</Text>
       </TouchableOpacity>
 
@@ -181,7 +201,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#E91D3C",
     fontWeight: 600,
+  },
+
+  error: {
+    color: '#F04A3F',
+    fontSize: 12,
+    fontWeight: 400
   }
+
 });
 
 export default SignInScreen;
