@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Topbar from '../../../components/main/Topbar'
 import Searchbar from '../../../components/main/Searchbar'
+import PrevousOrder from '../../../components/main/PreviousOrder'
 
 import CuisinesSection from '../../../components/main/CuisinesSection'
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Topbar />
             <Searchbar />
             <CuisinesSection />
+            <PrevousOrder />
         </View>
     );
 }

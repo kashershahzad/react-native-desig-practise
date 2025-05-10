@@ -1,26 +1,25 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import HorizontalImage from './HorizontalImage';
+import SectionHeader from './SectionHeader';
 
 const CuisinesSection = () => {
     return (
         <View style={styles.outerContainer}>
-            <View style={styles.headerContainer}>
-                <Text style={styles.heading}>Browse by Cuisines</Text>
-                <TouchableOpacity>
-                    <Text style={styles.seeall}>See all</Text>
-                </TouchableOpacity>
-            </View>
+            <SectionHeader
+                title="Browse by Cuisines"
+            // onPress={handleSeeAllPress}
+            />
             <HorizontalImage
                 images={[
-                    { source: require('../../assets/images/Cuisines/Indian.png'), text: 'Indian'},
-                    { source: require('../../assets/images/Cuisines/American.png') , text: 'American'},
-                    { source: require('../../assets/images/Cuisines/Mexican.png') , text: 'Mexican'},
-                    { source: require('../../assets/images/Cuisines/Asian.png') , text: 'Asian'},
-                    { source: require('../../assets/images/Cuisines/Indian.png'), text: 'Indian'},
-                    { source: require('../../assets/images/Cuisines/American.png') , text: 'American'},
-                    { source: require('../../assets/images/Cuisines/Mexican.png') , text: 'Mexican'},
-                    { source: require('../../assets/images/Cuisines/Asian.png') , text: 'Asian'},
+                    { source: require('../../assets/images/Cuisines/Indian.png'), text: 'Indian' },
+                    { source: require('../../assets/images/Cuisines/American.png'), text: 'American' },
+                    { source: require('../../assets/images/Cuisines/Mexican.png'), text: 'Mexican' },
+                    { source: require('../../assets/images/Cuisines/Asian.png'), text: 'Asian' },
+                    { source: require('../../assets/images/Cuisines/Indian.png'), text: 'Indian' },
+                    { source: require('../../assets/images/Cuisines/American.png'), text: 'American' },
+                    { source: require('../../assets/images/Cuisines/Mexican.png'), text: 'Mexican' },
+                    { source: require('../../assets/images/Cuisines/Asian.png'), text: 'Asian' },
                 ]}
             />
         </View>
