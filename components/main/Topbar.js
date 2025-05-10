@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import CustomDropdown from './CustomDropdown'; 
 
 const Topbar = () => {
     const [selectedValue, setSelectedValue] = useState("los_Anglos");
+
+    const options = [
+        { label: "Los Angeles", value: "los_Anglos" },
+        { label: "Option 2", value: "option2" },
+        { label: "Option 3", value: "option3" },
+    ];
 
     return (
         <View style={styles.container}>
             <Text style={styles.head}>Pickup to</Text>
             <View style={styles.topbar}>
-                <Picker
+                <CustomDropdown
+                    options={options}
                     selectedValue={selectedValue}
-                    onValueChange={(itemValue) => setSelectedValue(itemValue)}
-                    style={styles.picker}
-                    itemStyle={styles.pickerItem}
-                    mode="dropdown"
-                >
-                    <Picker.Item style={styles.label} label="Los Aneles" value="los_Anglos" />
-                    <Picker.Item label="Option 2" value="option2" />
-                    <Picker.Item label="Option 3" value="option3" />
-                </Picker>
+                    onSelect={setSelectedValue}
+                />
                 <View style={styles.icons}>
                     <TouchableOpacity>
                         <Image
@@ -37,34 +37,20 @@ const Topbar = () => {
             </View>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
-    // container: {
-    //     padding:3,
-    // },
     topbar: {
         flexDirection: 'row',
-        // alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: -20,
-        marginLeft:-10
-    },
-    picker: {
-        flex: 1, // Takes available space
-        height: 50,
-    },
-    label: {
-        fontWeight: "800",
+        marginTop: -10,
+        marginLeft: -10,
+        alignItems: 'center',
     },
     head: {
-        fontWeight: "400",
+        fontWeight: '400',
         fontSize: 14,
         marginBottom: 5,
-    },
-    pickerItem: {
-        fontWeight: "600",
-        fontSize: 16,
     },
     icons: {
         flexDirection: 'row',
