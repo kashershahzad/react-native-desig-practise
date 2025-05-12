@@ -3,12 +3,16 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import HorizontalImage from './HorizontalImage';
 import SectionHeader from './SectionHeader';
 
-const CuisinesSection = () => {
+
+const CuisinesSection = ({navigation}) => {
+        const handlenavigation = () => {
+        navigation.replace('Cuisines')
+    }
     return (
         <View style={styles.outerContainer}>
             <SectionHeader
                 title="Browse by Cuisines"
-            // onPress={handleSeeAllPress}
+                onPress={handlenavigation}
             />
             <HorizontalImage
                 images={[

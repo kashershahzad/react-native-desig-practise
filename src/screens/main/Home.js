@@ -9,14 +9,14 @@ import TopChiefs from '../../../components/main/TopChiefs';
 import BottomTabBar from '../../../components/main/BottomTabBar';
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <ScrollView style={styles.content}>
           <Topbar />
           <Searchbar />
-          <CuisinesSection />
+          <CuisinesSection navigation={navigation}/>
           <PrevousOrder />
           <TopChiefs />
           <PopularMeal />

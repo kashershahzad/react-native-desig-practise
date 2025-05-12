@@ -1,10 +1,12 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const TopBar = ({title}) => {
+const TopBar = ({title , navigation}) => {
   return (
     <View style={styles.container}>
-        <Image source={require('../assets/images/blackleftarrow.png')}/>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image source={require('../assets/images/blackleftarrow.png')} />
+        </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
         <Image source={require('../assets/images/info.png')} />
     </View>
