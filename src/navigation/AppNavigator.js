@@ -13,13 +13,14 @@ import Otp from '../screens/auth/Otp'
 import CreateNewpass from '../screens/auth/CreateNewpass'
 
 import Home from '../screens/main/Home';
+import Cuisines from '../screens/main/Cuisines';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Cuisines">
         <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Restpassmail" component={Restpassmail} options={{headerShown:false}}/>
@@ -34,6 +35,7 @@ const AppNavigator = () => {
 
         {/* Main */}
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
+        <Stack.Screen name="Cuisines" component={Cuisines} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
