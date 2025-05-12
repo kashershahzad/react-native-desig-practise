@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
         height: 20,
         marginLeft: 15,
     },
+    container:{
+        padding:20,
+        paddingBottom:10,
+    }
 });
 
 export default Topbar;
