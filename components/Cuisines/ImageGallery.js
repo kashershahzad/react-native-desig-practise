@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Image, TouchableOpacity, Text } from 'react-native';
 
-const ImageGallery = () => {
+const ImageGallery = ({navigation}) => {
     const images = [
         { id: 1, source: require('../../assets/images/meal/img1.png'),text:"Indian"},
         { id: 2, source: require('../../assets/images/meal/img2.png'),text:"Asian" },
@@ -26,7 +26,7 @@ const ImageGallery = () => {
             {rows.map((row, rowIndex) => (
                 <View key={`row-${rowIndex}`} style={styles.imageRow}>
                     {row.map((image) => (
-                        <TouchableOpacity key={`image-${image.id}`} style={styles.imageContainer}>
+                        <TouchableOpacity key={`image-${image.id}`} style={styles.imageContainer} onPress={()=>navigation.replace('CountryDishes')}>
                             <Image source={image.source} style={styles.image} />
                             <Text style={styles.imageText}>{image.text}</Text>
                         </TouchableOpacity>
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         padding: 10,
         paddingTop:20,
+        height:950,
     },
     imageRow: {
         flexDirection: 'row',

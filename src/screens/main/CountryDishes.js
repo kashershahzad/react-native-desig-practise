@@ -1,15 +1,16 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import TopBar from '../../../components/TopBar';
 import Filters from '../../../components/Filters';
 import ImageGallery from '../../../components/Cuisines/ImageGallery';
+import PopularMeal from '../../../components/main/PopularMeal';
 
-const Cuisines = ({navigation}) => {
+const CountryDishes = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <TopBar title="Browse by Cuisines"  navigation={navigation}/>
+        <TopBar title="American"  navigation={navigation}/>
         <Filters />
-        <ImageGallery  navigation={navigation}/>
+        <PopularMeal />
     </View>
   )
 }
@@ -21,4 +22,4 @@ container:{
 }
 })
 
-export default Cuisines
+export default CountryDishes

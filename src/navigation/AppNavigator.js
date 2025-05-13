@@ -14,6 +14,7 @@ import CreateNewpass from '../screens/auth/CreateNewpass'
 
 import Home from '../screens/main/Home';
 import Cuisines from '../screens/main/Cuisines';
+import CountryDishes from '../screens/main/CountryDishes';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ const AppNavigator = () => {
         {/* Main */}
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
         <Stack.Screen name="Cuisines" component={Cuisines} options={{headerShown:false}} />
+        <Stack.Screen name="CountryDishes" component={CountryDishes} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
