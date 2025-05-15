@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  Modal, 
-  Animated, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  Modal,
+  Animated,
   Pressable,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
 
 const BottomSheet = ({ visible, onClose, title, children }) => {
@@ -45,7 +46,7 @@ const BottomSheet = ({ visible, onClose, title, children }) => {
     >
       <View style={styles.modalOverlay}>
         <Pressable style={styles.modalBackground} onPress={onClose} />
-        <Animated.View 
+        <Animated.View
           style={[
             styles.modalContainer,
             { transform: [{ translateY: modalTranslateY }] }
@@ -54,18 +55,74 @@ const BottomSheet = ({ visible, onClose, title, children }) => {
           <View style={styles.modalHeader}>
             <View style={styles.modalHandle} />
           </View>
-          {title && <Text style={styles.modalTitle}>{title}</Text>}
-          <ScrollView style={styles.modalContent}>
-            {children}
-          </ScrollView>
-          <View style={styles.modalFooter}>
-            <TouchableOpacity style={styles.resetButton} onPress={onClose}>
-              <Text>Reset</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.applyButton} onPress={onClose}>
-              <Text style={{color: 'white'}}>Apply Filters</Text>
-            </TouchableOpacity>
+          <View style={styles.optioncontainer}>
+            {title && <Text style={styles.modalTitle}>{title}</Text>}
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Popular</Text>
+              <Image source={require('../assets/images/ratio.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Top Rated</Text>
+              <Image source={require('../assets/images/ratio.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Open Now</Text>
+              <Image source={require('../assets/images/ratio.png')} />
+            </View>
+            <View>
+              <Image source={require('../assets/images/divider.png')} />
+            </View>
           </View>
+
+
+           <View style={styles.optioncontainer}>
+            {title && <Text style={styles.modalTitle}>Sort</Text>}
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Price</Text>
+              <Image source={require('../assets/images/ratio.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Rating</Text>
+              <Image source={require('../assets/images/ratio.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Distance</Text>
+              <Image source={require('../assets/images/check.png')} />
+            </View>
+            <View>
+              <Image source={require('../assets/images/divider.png')} />
+            </View>
+          </View>
+
+
+
+           <View style={styles.optioncontainer}>
+            {title && <Text style={styles.modalTitle}>Cuisine</Text>}
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Hambuger</Text>
+              <Image source={require('../assets/images/checkbox.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Onigiri</Text>
+              <Image source={require('../assets/images/checkbox.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Meetballs</Text>
+              <Image source={require('../assets/images/checkbox.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Spaghetti</Text>
+              <Image source={require('../assets/images/checkbox.png')} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.optiontext}>Seafood</Text>
+              <Image source={require('../assets/images/checkbox.png')} />
+            </View>
+          </View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttontext}>Apply Now</Text>
+          </TouchableOpacity>
+
         </Animated.View>
       </View>
     </Modal>
@@ -91,7 +148,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     paddingHorizontal: 20,
     paddingBottom: 20,
-    maxHeight: '80%',
+   
   },
   modalHeader: {
     alignItems: 'center',
@@ -104,9 +161,9 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   modalTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    fontSize: 14,
+    fontWeight: '400',
+    marginVertical: 5,
   },
   modalContent: {
     flex: 1,
@@ -116,21 +173,33 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 20,
   },
-  resetButton: {
-    padding: 15,
-    backgroundColor: '#E7E7E7',
-    borderRadius: 10,
-    flex: 1,
-    marginRight: 10,
-    alignItems: 'center',
+
+  option: {
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
-  applyButton: {
-    padding: 15,
-    backgroundColor: 'black',
-    borderRadius: 10,
-    flex: 1,
-    alignItems: 'center',
+  optiontext: {
+    fontWeight: "bold",
+    fontSize: 14,
   },
+  optioncontainer:{
+    gap:16,
+  },
+
+  buttontext:{
+    color:"white",
+    fontWeight:"bold"
+  },
+  button:{
+    margin:10,
+    marginTop:15,
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"#E91D3C",
+    paddingVertical:"13",
+    borderRadius:10,
+  }
+  
 });
 
 export default BottomSheet;

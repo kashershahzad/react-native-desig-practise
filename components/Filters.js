@@ -38,7 +38,7 @@ const Filters = () => {
       <BottomSheet
         visible={isBottomSheetVisible}
         onClose={() => setIsBottomSheetVisible(false)}
-        title="Filter Options"
+        title="Filter"
       >
         {/* Add your filter content here */}
         <View style={filterStyles.filterOption}>
