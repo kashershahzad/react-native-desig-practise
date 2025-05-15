@@ -18,7 +18,7 @@ const SignInScreen = ({ navigation }) => {
     if (email === '' || Password === '') {
       seterror(true);
     } else {
-      navigation.replace('Otp')
+      navigation.replace('Home')
     }
   };
 
@@ -40,6 +40,7 @@ const SignInScreen = ({ navigation }) => {
           <TextInput placeholder='mail@site.com'
             style={[styles.input, error && { borderBottomColor: 'red' }]}
             value={email}
+            onChangeText={setemail} 
             keyboardType="email-address" />
           {error && <Text style={styles.error}>Invalid input entered</Text>}
         </View>
@@ -48,6 +49,7 @@ const SignInScreen = ({ navigation }) => {
           <TextInput
             style={styles.input}
             value={Password}
+            onChangeText={setPassword}
             secureTextEntry />
         </View>
       </View>

@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 const TopBar = ({title , navigation}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Image source={require('../assets/images/blackleftarrow.png')} />
         </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
