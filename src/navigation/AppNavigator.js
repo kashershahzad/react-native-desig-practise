@@ -16,12 +16,15 @@ import Home from '../screens/main/Home';
 import Cuisines from '../screens/main/Cuisines';
 import CountryDishes from '../screens/main/CountryDishes';
 
+// COok
+import Cook from '../screens/main/Cook';
+
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="Cook">
         <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Restpassmail" component={Restpassmail} options={{headerShown:false}}/>
@@ -38,6 +41,9 @@ const AppNavigator = () => {
         <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
         <Stack.Screen name="Cuisines" component={Cuisines} options={{headerShown:false}} />
         <Stack.Screen name="CountryDishes" component={CountryDishes} options={{headerShown:false}} />
+
+        {/* Cook */}
+        <Stack.Screen name="Cook" component={Cook} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
