@@ -16,9 +16,11 @@ const Intro = () => {
                 </View>
             </View>
             <View>
+                <TouchableOpacity>
                 <Image source={require('../../assets/images/cook/Line.png')} />
                 <Text style={styles.name2}>Why I Chef?</Text>
                 <Text style={styles.para}>Lorem ipsum dolor sit amet consectetur. Odio turpis pellentesque tristique...</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
