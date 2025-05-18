@@ -3,10 +3,10 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button,
 import ProgressBar from './ProgressBar';
 const ratingsData = {
     5: 120, // 120 votes for 5 stars
-    4: 80,
+    4: 10,
     3: 30,
-    2: 15,
-    1: 10
+    2: 16,
+    1: 35
 };
 const Rating = () => {
     return (
@@ -44,6 +44,9 @@ const Rating = () => {
                             </Text>
                         </View>
                     </View>
+
+
+
                 </View>
             </View>
 
@@ -51,20 +54,41 @@ const Rating = () => {
                 <Text style={styles.timehead}>Open Hours</Text>
                 <View style={styles.timecontainer}>
                     <View style={styles.timecontain}>
-                        <Text style={{fontSize:12, color:"#666666"}}>
+                        <Text style={{ fontSize: 12, color: "#666666" }}>
                             Monday - Friday
                         </Text>
-                        <Text style={{fontSize:12, color:"#666666"}}>
+                        <Text style={{ fontSize: 12, color: "#666666" }}>
                             6:00 - 19:30
                         </Text>
                     </View>
                     <View style={styles.timecontain}>
-                        <Text style={{fontSize:12, color:"#666666"}}>
+                        <Text style={{ fontSize: 12, color: "#666666" }}>
                             Monday - Friday
                         </Text>
-                        <Text style={{fontSize:12, color:"#666666"}}>
+                        <Text style={{ fontSize: 12, color: "#666666" }}>
                             6:00 - 19:30
                         </Text>
+                    </View>
+                </View>
+            </View>
+
+
+            <View style={styles.time}>
+                <Text style={styles.timehead}>Adress Details</Text>
+                <View style={styles.timecontainer}>
+                    <View style={styles.adress}>
+                        <Image style={styles.locimg} source={require('../../assets/images//cook/location.png')} />
+                        <Text style={{ fontSize: 12 }}>1.3km</Text>
+                        <Image style={styles.locimg} source={require('../../assets/images/cook/clock.png')} />
+                        <Text style={{ fontSize: 12 }}>24 mins</Text>
+                    </View>
+                    <View>
+                        <Text style={{fontSize:12}}>
+                            711-2880 Nulla St, Frederick Nebraska 20620
+                        </Text>
+                    </View>
+                    <View>
+                        <Image style={{marginVertical:10,}} source={require('../../assets/images/cook/map.png')} />
                     </View>
                 </View>
             </View>
@@ -112,14 +136,23 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "bold"
     },
-    timecontain:{
-        flexDirection:"row",
-        justifyContent:"space-between"
+    timecontain: {
+        flexDirection: "row",
+        justifyContent: "space-between"
     },
-    timecontainer:{
+    timecontainer: {
+        gap: 5,
+        marginTop: 5,
+    },
+    adress:{
+        marginTop: 10,
+        flexDirection: 'row',
+        fontSize: 5,
         gap:5,
-        marginTop:5,
     },
+    locimg:{
+        marginTop:2,
+    }
 
 })
 
