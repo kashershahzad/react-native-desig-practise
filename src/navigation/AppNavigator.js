@@ -18,13 +18,14 @@ import CountryDishes from '../screens/main/CountryDishes';
 
 // COok
 import Cook from '../screens/main/Cook';
+import RatingDetails from '../screens/main/RatingDetails';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Cook">
+      <Stack.Navigator initialRouteName="RatingDetails">
         <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Restpassmail" component={Restpassmail} options={{headerShown:false}}/>
@@ -44,6 +45,7 @@ const AppNavigator = () => {
 
         {/* Cook */}
         <Stack.Screen name="Cook" component={Cook} options={{headerShown:false}} />
+        <Stack.Screen name="RatingDetails" component={RatingDetails} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
