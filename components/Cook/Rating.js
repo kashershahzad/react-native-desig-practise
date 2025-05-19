@@ -8,7 +8,7 @@ const ratingsData = {
     2: 16,
     1: 35
 };
-const Rating = () => {
+const Rating = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.rating}>
@@ -16,9 +16,11 @@ const Rating = () => {
                     <Text style={{ fontSize: 18, fontWeight: "bold" }}>
                         Rating
                     </Text>
+                    <TouchableOpacity onPress={()=>navigation.replace('RatingDetails')}>
                     <Text style={{ fontSize: 14, color: "#E91D3C" }}>
                         See All
                     </Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.contain}>
                     <View>

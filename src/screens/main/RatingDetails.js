@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image, ImageBackground, StatusBar } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image, ImageBackground, StatusBar, ScrollView } from 'react-native';
 import Cookcover from '../../../components/Cook/Cookcover';
 import CookRating from '../../../components/Cook/CookRating';
-
+import Customerfeedback from '../../../components/Cook/Customerfeedback';
 
 const RatingDetails = () => {
     return (
+        <ScrollView>
         <View>
             <Cookcover />
             <CookRating />
@@ -17,7 +18,9 @@ const RatingDetails = () => {
             <Text style={{marginHorizontal:50, textAlign:"center", color:"#727272", marginTop:13, }}>
                 you have an order in the last 24 hours from this Chef
             </Text>
+            <Customerfeedback />
         </View>
+        </ScrollView>
     )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image, ImageBackground, StatusBar } from 'react-native';
 
 
-const Cookcover = () => {
+const Cookcover = ({navigation}) => {
     return (
         <>
             <StatusBar
@@ -14,9 +14,11 @@ const Cookcover = () => {
                 style={styles.container}
                 resizeMode="cover"
             >
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
                 <View>
                     <Image source={require('../../assets/images/cook/back.png')} />
                 </View>
+                </TouchableOpacity>
 
                 <View style={styles.righticon}>
                     <TouchableOpacity>

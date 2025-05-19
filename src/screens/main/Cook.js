@@ -6,7 +6,7 @@ import TopBar from '../../../components/Cook/Topbar';
 import FoodCard from '../../../components/Cook/FoodCard';
 import Rating from '../../../components/Cook/Rating';
 
-const Cook = () => {
+const Cook = ({navigation}) => {
   const [showRating, setShowRating] = useState(false);
 
   const toggleRatingView = () => {
@@ -15,11 +15,11 @@ const Cook = () => {
 
   return (
     <ScrollView>
-      <Cookcover />
+      <Cookcover navigation={navigation}/>
       <Intro onWhyChefPress={toggleRatingView} />
       
       {showRating ? (
-        <Rating />
+        <Rating  navigation={navigation}/>
       ) : (
         <>
           <TopBar />
