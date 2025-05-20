@@ -1,7 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const ChiefImagegallery = ({ images }) => {
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
             <ScrollView
@@ -10,17 +12,13 @@ const ChiefImagegallery = ({ images }) => {
                 contentContainerStyle={styles.scrollContainer}
             >
                 {images.map((image, index) => (
-                    <TouchableOpacity key={index} style={styles.itemContainer}>
+                    <TouchableOpacity key={index} style={styles.itemContainer} onPress={()=>{navigation.navigate('Cook')}}>
                         <Image
                             source={image.source}
                             style={styles.image}
                             resizeMode="cover"
                         />
                         <Text style={styles.imageText}>{image.text}</Text>
-                        {/* <View style={styles.user}>
-                            <Image source={image.userimg} />
-                            <Text>{image.username}</Text>
-                        </View> */}
                             <View  style={styles.rating}>
                                 <Image source={require('../../assets/images/star.png')} />
                                 <Text style={{fontSize:12}}>{image.rating}</Text>

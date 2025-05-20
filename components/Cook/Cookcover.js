@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextStyle, Button, Image, ImageBackground, StatusBar } from 'react-native';
-
-
-const Cookcover = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+const Cookcover = () => {
+    const navigation = useNavigation();
     return (
         <>
             <StatusBar

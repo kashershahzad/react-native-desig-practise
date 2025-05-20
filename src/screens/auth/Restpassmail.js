@@ -2,10 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import Backbutton from '../../../components/Backbutton';
 
-const Restpassmail = ({navigation}) => {
+const Restpassmail = ({ navigation }) => {
 
-    const nxtpage = () =>{
-navigation.replace('PassForget')
+    const nxtpage = () => {
+        navigation.replace('PassForget')
     }
     return (
         <View style={style.container}>
@@ -80,7 +80,7 @@ const style = StyleSheet.create({
         color: '#1B1B1B',
         fontSize: 14,
         fontWeight: 400,
-        marginBottom:5,
+        marginBottom: 5,
     },
 
 })

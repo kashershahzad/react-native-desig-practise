@@ -15,7 +15,7 @@ const Cook = ({navigation}) => {
 
   return (
     <ScrollView>
-      <Cookcover navigation={navigation}/>
+      <Cookcover navigation={navigation} />
       <Intro onWhyChefPress={toggleRatingView} />
       
       {showRating ? (
