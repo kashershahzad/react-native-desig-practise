@@ -4,7 +4,7 @@ import Cookcover from '../../../components/Cook/Cookcover';
 import CookRating from '../../../components/Cook/CookRating';
 import Customerfeedback from '../../../components/Cook/Customerfeedback';
 
-const RatingDetails = () => {
+const YourRatingRatingDetails = () => {
     return (
         <ScrollView>
         <View>

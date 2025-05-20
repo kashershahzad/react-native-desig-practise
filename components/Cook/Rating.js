@@ -101,7 +101,7 @@ const Rating = ({ navigation }) => {
                         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
                             Rating
                         </Text>
-                        <TouchableOpacity onPress={() => navigation.replace('RatingDetails')}>
+                        <TouchableOpacity onPress={() => navigation.replace('YourRating')}>
                             <Text style={{ fontSize: 14, color: "#E91D3C" }}>
                                 See All
                             </Text>

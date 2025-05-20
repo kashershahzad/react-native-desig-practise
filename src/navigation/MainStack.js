@@ -7,6 +7,7 @@ import CountryDishes from '../screens/main/CountryDishes';
 // COok
 import Cook from '../screens/main/Cook';
 import RatingDetails from '../screens/main/RatingDetails';
+import YourRating from '../screens/main/YourRating';
 
 
 const MainStack = () => {
@@ -14,12 +15,13 @@ const MainStack = () => {
     return (
         <Stack.Navigator screenOptions={{
             headerShown: false,
-        }} initialRouteName="Cook">
+        }}>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Cuisines" component={Cuisines} />
             <Stack.Screen name="CountryDishes" component={CountryDishes} />
             <Stack.Screen name="Cook" component={Cook} />
             <Stack.Screen name="RatingDetails" component={RatingDetails} />
+            <Stack.Screen name="YourRating" component={YourRating} />
         </Stack.Navigator>
     )
 }
