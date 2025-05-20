@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const SplashScreen = ({ navigation }) => {
+const SplashScreen = () => {
+  const navigation = useNavigation()
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('SignIn');
+      navigation.navigate('SignIn');
     }, 2000);
   }, [navigation]);
 

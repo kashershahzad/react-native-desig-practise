@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import SplashScreen from "../screens/SplashScreen";
 import SignInScreen from '../screens/auth/signin';
 import SmileDesign from '../../components/SmileDesign';
 import PassForget from '../screens/auth/PassForget';
@@ -16,7 +17,6 @@ const AuthStack = () => {
         <Stack.Navigator screenOptions={{
             headerShown: false,
         }}>
-
             <Stack.Screen name="SignInScreen " component={SignInScreen} />
             <Stack.Screen name="SmileDesign" component={SmileDesign} />
             <Stack.Screen name="PassForget" component={PassForget} />

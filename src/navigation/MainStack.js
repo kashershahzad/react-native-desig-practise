@@ -14,7 +14,7 @@ const MainStack = () => {
     return (
         <Stack.Navigator screenOptions={{
             headerShown: false,
-        }}>
+        }} initialRouteName="Cook">
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Cuisines" component={Cuisines} />
             <Stack.Screen name="CountryDishes" component={CountryDishes} />
