@@ -8,6 +8,7 @@ import CountryDishes from '../screens/main/CountryDishes';
 import Cook from '../screens/main/Cook';
 import RatingDetails from '../screens/main/RatingDetails';
 import YourRating from '../screens/main/YourRating';
+import ProductDetails from '../screens/main/ProductDetails';
 
 
 const MainStack = () => {
@@ -22,6 +23,7 @@ const MainStack = () => {
             <Stack.Screen name="Cook" component={Cook} />
             <Stack.Screen name="RatingDetails" component={RatingDetails} />
             <Stack.Screen name="YourRating" component={YourRating} />
+            <Stack.Screen name="ProductDetail" component={ProductDetails} />
         </Stack.Navigator>
     )
 }

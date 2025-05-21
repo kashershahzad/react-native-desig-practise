@@ -1,7 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const BigHorizontalImage = ({ images }) => {
+     const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <ScrollView
@@ -10,7 +12,7 @@ const BigHorizontalImage = ({ images }) => {
                 contentContainerStyle={styles.scrollContainer}
             >
                 {images.map((image, index) => (
-                    <TouchableOpacity key={index} style={styles.itemContainer}>
+                    <TouchableOpacity key={index} style={styles.itemContainer} onPress={() => navigation.navigate('ProductDetail', { product: image })}>
                         <Image
                             source={image.source}
                             style={styles.image}
